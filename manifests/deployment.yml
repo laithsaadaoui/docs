@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "demokube-9d81"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "demokube-9d81"
+  template:
+    metadata:
+      labels:
+        app: "demokube-9d81"
+    spec:
+      containers:
+        - name: "demokube-9d81"
+          image: "kuberepodemo.azurecr.io/demokube"
+          ports:
+          - containerPort: 443
