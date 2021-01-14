@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "demokube-9d81"
+    labels:
+        app: "demokube-9d81"
+spec:
+    type: LoadBalancer
+    ports:
+    - port: 443
+      targetPort: 443
+      protocol: TCP
+      name: http
+    selector:
+        app: "demokube-9d81"
